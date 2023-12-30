@@ -1,4 +1,4 @@
-#Práctica Creativa 2 - 2023
+# Práctica Creativa 2 - 2023
 
 Autores: Fernando Castell Miñón y Belén Casajús Casado
 

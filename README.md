@@ -16,7 +16,7 @@ $ sudo apt-get -y install git
 $ git clone https://github.com/fercastell13/pc2-2023.git
 $ cd pc2-2023
 $ python3 pc2-2023.py
-$ python3 /practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 8080
+$ sudo python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 80
 
 
 

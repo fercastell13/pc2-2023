@@ -9,7 +9,7 @@ import os
 import subprocess
 
 # Puerto del servicio para google cloud
-puerto = 80
+puerto = 8080 #80 #Use a port number above 1024
 
 # Actualización del sistema
 os.system('sudo apt-get -y update') # os.system('sudo apt.get -y update')

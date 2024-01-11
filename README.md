@@ -10,6 +10,12 @@ ONGOING
 pc2.py: script que despliega la aplicación encontrada en el aiguiente repositorio:
 https://github.com/CDPS-ETSIT/practica_creativa2.git
 
+
+Crear máquina virtual en GCP
+$ sudo apt-get -y install git
+$ git clone https://github.com/fercastell13/pc2-2023.git
+$ cd pc2-2023
+$ python3 pc2-2023.py
 $ python3 /practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 8080
 
 

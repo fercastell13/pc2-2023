@@ -22,7 +22,13 @@ os.system('sudo apt-get -y install git python3 python3-pip') # python3.8
 os.system('git clone https://github.com/CDPS-ETSIT/practica_creativa2.git')
 
 # Instalación de las dependencias (requirements.txt)
-subprocess.check_call(["pip", "install", "-r", "./practica_creativa2/bookinfo/src/productpage/requirements.txt"])
+# subprocess.check_call(["pip", "install", "-r", "./practica_creativa2/bookinfo/src/productpage/requirements.txt"])
+subprocess.check_call(["python3", "-m", "pip", "install", "-r", "./practica_creativa2/bookinfo/src/productpage/requirements.txt"])
+#os.system('python3 -m pip install -r ./practica_creativa2/bookinfo/src/productpage/requirements.txt')
+
+
+
+
 # Instalamos las librerias que dan problemas de versiones
 os.system('pip install urllib3')
 os.system('pip install flask_bootstrap')

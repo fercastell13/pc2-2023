@@ -44,17 +44,36 @@ grupo_numero = os.getenv('GRUPO_NUMERO')
 
 # Modificación del título de la app para que aparezca el valor de la variable de entorno.
 # Para el archivo index.html
-with open("./practica_creativa2/bookinfo/src/productpage/templates/index.html", "r") as f:
-    code = f.read()
-code = code.replace("Simple Bookstore App", str(grupo_numero))
-with open("./practica_creativa2/bookinfo/src/productpage/templates/index.html", "w") as f:
-    f.write(code)
-# Para productpage.html
-with open("./practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r") as f:
-    code = f.read()
-code = code.replace("Simple Bookstore App", str(grupo_numero))
-with open("./practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w") as f:
-    f.write(code)
+# with open("./practica_creativa2/bookinfo/src/productpage/templates/index.html", "r") as f:
+#     code = f.read()
+# code = code.replace("Simple Bookstore App", str(grupo_numero))
+# with open("./practica_creativa2/bookinfo/src/productpage/templates/index.html", "w") as f:
+#     f.write(code)
+# # Para productpage.html
+# with open("./practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "r") as f:
+#     code = f.read()
+# code = code.replace("Simple Bookstore App", str(grupo_numero))
+# with open("./practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w") as f:
+#     f.write(code)
+
+
+
+# Nueva version
+    
+# Modificar el título en index.html
+index_html_path = "./practica_creativa2/bookinfo/src/productpage/templates/index.html"
+with open(index_html_path, "r") as f:
+    content = f.read()
+
+# Buscar y reemplazar el texto del título en index.html
+old_title = "Simple Bookstore App"
+new_title = str(grupo_numero)
+content = content.replace(old_title, new_title)
+
+# Guardar los cambios en index.html
+with open(index_html_path, "w") as f:
+    f.write(content)
+
 
 # Por último, ejecutar la aplicación especificando el puerto deseado
 subprocess.check_call(["python3", "./practica_creativa2/bookinfo/src/productpage/productpage_monolith.py", str(puerto)])

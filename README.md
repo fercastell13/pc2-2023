@@ -18,6 +18,8 @@ $ cd pc2-2023
 $ python3 pc2-2023.py
 $ sudo python3 practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 80
 
+Hemos añadido un FW para habilitar el tráfico en el puerto 9080. Ahora sale la app correctamente, aunque sin estilo.
+La aplicación se encuentra corriendo en http://34.140.34.89:9080/ (no funciona en HTTPS)
 
 
 ### 2.- Despliegue de una aplicación monolítica usando docker (2 puntos)

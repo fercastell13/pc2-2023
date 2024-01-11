@@ -10,6 +10,8 @@ ONGOING
 pc2.py: script que despliega la aplicación encontrada en el aiguiente repositorio:
 https://github.com/CDPS-ETSIT/practica_creativa2.git
 
+$ python3 /practica_creativa2/bookinfo/src/productpage/productpage_monolith.py 8080
+
 
 
 ### 2.- Despliegue de una aplicación monolítica usando docker (2 puntos)

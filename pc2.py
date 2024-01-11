@@ -20,7 +20,7 @@ os.system('sudo apt-get -y upgrade') # os.system('sudo apt.get -y upgrade')
 # Clonado de la practica
 os.system('sudo apt-get -y install git') # os.system('sudo apt.get -y install git')
 os.system('git clone https://github.com/CDPS-ETSIT/practica_creativa2.git')
-os.system('sudo apt-get -y install python3.8')
+os.system('sudo apt-get -y install python3.9') #3.8
 os.system('sudo apt-get -y install python3-pip')
 
 # Instalación de las dependencias (requirements.txt)

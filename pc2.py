@@ -27,6 +27,9 @@ os.system('git clone https://github.com/CDPS-ETSIT/practica_creativa2.git')
 # subprocess.check_call(["python3", "-m", "pip", "install", "-r", "./practica_creativa2/bookinfo/src/productpage/requirements.txt"])
 os.system('python3 -m pip install -r ./practica_creativa2/bookinfo/src/productpage/requirements.txt')
 
+# Da mazo por culo #TODO
+os.system('python3 -m pip install Flask-Bootstrap==3.3.7.1')
+
 # # Instalación de  librerias que dan problemas de versiones
 # os.system('pip install urllib3')
 # os.system('pip install flask_bootstrap')

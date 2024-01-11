@@ -9,7 +9,7 @@ import os
 import subprocess
 
 # Puerto del servicio para google cloud
-puerto = 8080 #80 #Use a port number above 1024
+puerto = 80 #8080 #Use a port number above 1024
 
 # Actualización del sistema
 os.system('sudo apt-get -y update') # os.system('sudo apt.get -y update')
@@ -34,16 +34,13 @@ os.system('python3 -m pip install -r ./practica_creativa2/bookinfo/src/productpa
 # os.system('pip install opentracing-instrumentation')
 
 # Declaración de la variable de entorno <GRUPO_NUMERO>
-# os.environ.setdefault('GRUPO_NUMERO', '21')
-# grupo_numero = os.getenv('GRUPO_NUMERO')
-
-##
 os.environ['GRUPO_NUMERO'] = '21'
 grupo_numero = os.getenv('GRUPO_NUMERO')
 
 
 # Modificación del título de la app para que aparezca el valor de la variable de entorno.
 # Para el archivo index.html
+
 # with open("./practica_creativa2/bookinfo/src/productpage/templates/index.html", "r") as f:
 #     code = f.read()
 # code = code.replace("Simple Bookstore App", str(grupo_numero))
@@ -55,25 +52,25 @@ grupo_numero = os.getenv('GRUPO_NUMERO')
 # code = code.replace("Simple Bookstore App", str(grupo_numero))
 # with open("./practica_creativa2/bookinfo/src/productpage/templates/productpage.html", "w") as f:
 #     f.write(code)
-
-
-
-# Nueva version
     
-# Modificar el título en index.html
-index_html_path = "./practica_creativa2/bookinfo/src/productpage/templates/index.html"
-with open(index_html_path, "r") as f:
-    content = f.read()
+# Modificar el título en el index.html y en productpage.html
+# VARIABLE DE ENTORNO
+ruta_pp = "./practica_creativa2/bookinfo/src/productpage/templates/productpage.html"
+ruta_index = "./practica_creativa2/bookinfo/src/productpage/templates/index.html"
+with open(ruta_index, "r") as f:
+    codigo = f.read()
 
 # Buscar y reemplazar el texto del título en index.html
-old_title = "Simple Bookstore App"
-new_title = str(grupo_numero)
-content = content.replace(old_title, new_title)
+titulo = "Simple Bookstore App"
+nuevo_titulo = str(grupo_numero)
+codigo = codigo.replace(titulo, nuevo_titulo)
 
 # Guardar los cambios en index.html
-with open(index_html_path, "w") as f:
-    f.write(content)
+with open(ruta_index, "w") as f:
+    f.write(codigo)
+# Guardar los cambios en productpage.html
+with open(ruta_pp, "w") as f:
+    f.write(codigo)
 
-
-# Por último, ejecutar la aplicación especificando el puerto deseado
+# Por último, ejecutar la aplicación especificando el puerto deseado indicado al principio del documento
 subprocess.check_call(["python3", "./practica_creativa2/bookinfo/src/productpage/productpage_monolith.py", str(puerto)])

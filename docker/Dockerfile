@@ -3,18 +3,23 @@
 # Grupo 21
 
 # TODO: http://localhost:9080/productpage NO FUNCIONA
-# 1. Creamos la imagen:
-    # $docker build -t g40/product-page .
+
+# PASOS A SEGUIR:
+# 1.- Crear la imagen con la siguiente orden:
+#       
+# 2.- Arrancar el contenedor ene l puerto 9080
+#      
+# 3.- Abrir el navegador:
+
+# 1.- $ docker build -t g21/product-page .
+# 2.- $ docker run --name g21-product-page -p 9080:9080 -d g21/product-page
+# 3.- $ htpp://localhost:9080/productpage
+    
+
+
 # 2. Arrancamos el contenedor con el puerto 9080
     # $docker run --name g40-product-page -p 9080:9080 -e GROUP_NUMBER=40 -d g40/product-page
 # 3. Abrimos el navegador: http://localhost:9080/productpage
-
-# Es importante tener en cuenta que, al utilizar un solo contenedor para todos los servicios, 
-# es posible que sea más difícil actualizar o cambiar la versión de un servicio específico sin 
-# tener que volver a construir e instalar la imagen completa. Además, puede ser más difícil aislar
-# y solucionar problemas en un servicio específico si todos están incluidos en un mismo contenedor.
-# En general, se recomienda utilizar microservicios para facilitar el despliegue y el mantenimiento 
-# de aplicaciones complejas.
 
 
 # Utiliza una imagen base de Python

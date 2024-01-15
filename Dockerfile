@@ -18,3 +18,17 @@ ENV GRUPO_NUMERO=21
 
 # Comando para iniciar la aplicación
 CMD ["python3", "productpage_monolith.py", "9080"]
+
+
+# TODO: http://localhost:9080/productpage NO FUNCIONA
+
+# PASOS A SEGUIR:
+# 1.- Crear la imagen con la siguiente orden:
+#       
+# 2.- Arrancar el contenedor ene l puerto 9080
+#      
+# 3.- Abrir el navegador:
+
+# 1.- $ docker build -t g21/product-page .
+# 2.- $ docker run --name g21-product-page -p 9080:9080 -d g21/product-page
+# 3.- $ htpp://localhost:9080/productpage

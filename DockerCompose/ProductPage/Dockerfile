@@ -19,4 +19,6 @@ EXPOSE 9080
 
 # Si queremos construir la imagen usaremos
 # el siguiente comando:
-#       $ docker build -t details -f ./DockerCompose/ProductPage/Dockerfile .
+#       $ docker build -t product-page -f ./DockerCompose/ProductPage/Dockerfile .
+#       $ docker run --name product-page -p 9080:9080 -d product-page
+#       $ http://localhost:9080/product-page

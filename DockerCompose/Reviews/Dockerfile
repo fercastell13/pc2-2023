@@ -9,3 +9,5 @@ CMD ["java", "-jar", "reviews.jar"]
 # Si queremos construir la imagen usaremos
 # el siguiente comando:
 #       $ docker build -t details -f ./DockerCompose/Reviews/Dockerfile .
+
+# $ docker run --rm -u root -v "$(pwd)":/home/gradle/project -w /home/gradle/project gradle:4.8.1 gradle clean build

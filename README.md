@@ -14,6 +14,12 @@ https://github.com/CDPS-ETSIT/practica_creativa2.git
 
 
 PASOS PARA crear máquina virtual en GCP
+OJO! COMO CREAR REGLA DE FW
+
+tres puntos -> ver detalles de red -> FW (pestaña de la izquierda) -> Crear regla de FW (+)
+
+
+
 $ sudo apt-get update
 $ sudo apt-get -y install git
 $ git clone https://github.com/fercastell13/pc2-2023.git

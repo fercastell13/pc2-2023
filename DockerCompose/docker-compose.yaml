@@ -1,0 +1,30 @@
+version: '3'
+services:
+  productpage:
+    build: ./path_to_product_page
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+
+  details:
+    build: ./path_to_details
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+      - ENABLE_EXTERNAL_BOOK_SERVICE=true
+
+  reviews:
+    build: ./path_to_reviews
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1
+
+  ratings:
+    build: ./path_to_ratings
+    ports:
+      - "9080:9080"
+    environment:
+      - SERVICE_VERSION=v1

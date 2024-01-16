@@ -16,6 +16,8 @@ https://github.com/CDPS-ETSIT/practica_creativa2.git
 PASOS PARA crear máquina virtual en GCP
 OJO! COMO CREAR REGLA DE FW
 
+
+
 tres puntos -> ver detalles de red -> FW (pestaña de la izquierda) -> Crear regla de FW (+)
 
 
@@ -29,7 +31,12 @@ $ python3 pc2.py
 
 
 ### 2.- Despliegue de una aplicación monolítica usando docker (2 puntos)
-//TODO
+//DONE
+
+
+//TODO: SUBIR IMAGEN A DOCKERHUB
+
+![Alt text](./images/image.png)
 
 ### 3.- Segmentación de una aplicación monolítica en microservicios utilizando docker-compose ( 2 puntos)
 //TODO

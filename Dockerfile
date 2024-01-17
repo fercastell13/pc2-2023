@@ -1,4 +1,9 @@
+# Imagen disponible en DockerHub:
+# https://hub.docker.com/repository/docker/fernandocastell/product-page/
+# 
+
 # Usar la imagen base de Python
+
 FROM python:3.7.7-slim
 
 

@@ -18,9 +18,6 @@ services:
     container_name: 21-details
     ports:
       - "9081:9080"
-
-
-
     # environment:
     #   - SERVICE_VERSION=v1
     #   - ENABLE_EXTERNAL_BOOK_SERVICE=true
@@ -31,6 +28,16 @@ services:
   #     - "9080:9080"
   #   environment:
   #     - SERVICE_VERSION=v1
+    reviews:
+      build:
+        context: ./src/reviews/reviews-wlpcfg
+        dockerfile: Dockerfile
+      container_name: reviews-container
+      environment:
+        - ENABLE_RATINGS=true # Variable de entorno
+      # volumes:
+      #   - ./src/reviews/reviews-wlpcfg:/app/config
+
 
   # ratings:
   #   build: ./Ratings

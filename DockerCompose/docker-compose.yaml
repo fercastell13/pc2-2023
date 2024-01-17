@@ -4,6 +4,12 @@ services:
     build: 
       context: ./ProductPage
       dockerfile: Dockerfile
+    # ...
+    image: 21/productpage
+    container_name: 21-productpage
+    volumes:
+      - ./productpage:/app
+    # ...
     ports:
       - "9080:9080"
     environment:

@@ -14,11 +14,13 @@ RUN pip3 install -r /practica_creativa2/bookinfo/src/productpage/requirements.tx
 # Exponemos el puerto
 EXPOSE 9080
 
+CMD ["python3", "/practica_creativa2/bookinfo/src/productpage/productpage.py", "9080"]
+
 
 
 
 # Si queremos construir la imagen usaremos
 # el siguiente comando:
 #       $ docker build -t product-page -f ./DockerCompose/ProductPage/Dockerfile .
-#       $ docker run --name product-page -p 9080:9080 -d product-page
+#       $ docker-compose up
 #       $ http://localhost:9080/product-page

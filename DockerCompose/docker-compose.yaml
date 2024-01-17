@@ -28,20 +28,27 @@ services:
   #     - "9080:9080"
   #   environment:
   #     - SERVICE_VERSION=v1
-    reviews:
-      build:
-        context: ./src/reviews/reviews-wlpcfg
-        dockerfile: Dockerfile
-      container_name: reviews-container
-      environment:
-        - ENABLE_RATINGS=true # Variable de entorno
+  # pc2-2023\DockerCompose\Reviews\reviews-wlpcfg\servers\LibertyProjectServer
+  reviews:
+    build:
+      context: ./Reviews/reviews-wlpcfg/
+      dockerfile: Dockerfile
+    image: 21/reviews:v3 # v2, v3
+    container_name: reviews-container
+    ports:
+      - "9082:9080"
+    environment:
+      - ENABLE_RATINGS=true # Variable de entorno
+      - SERVICE_VERSION=v3 #v1, v2, v3
+      - STAR_COLOR=red #red para la versión3
+
       # volumes:
       #   - ./src/reviews/reviews-wlpcfg:/app/config
 
 
-  # ratings:
-  #   build: ./Ratings
-  #   ports:
-  #     - "9080:9080"
-  #   environment:
-  #     - SERVICE_VERSION=v1
+  ratings:
+    build: ./Ratings
+    ports:
+      - "9083:9080"
+    environment:
+      - ENABLE_RATINGS=true

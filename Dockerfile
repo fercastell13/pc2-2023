@@ -38,9 +38,6 @@ RUN sed -i "s/Simple Bookstore App/$GRUPO_NUMERO/g" ./practica_creativa2/bookinf
 # Comando para iniciar la aplicación
 CMD ["python3", "./practica_creativa2/bookinfo/src/productpage/productpage_monolith.py", "9080"]
 
-
-# TODO: http://localhost:9080/productpage NO FUNCIONA
-
 # PASOS A SEGUIR:
 # 1.- Crear la imagen con la siguiente orden:
 #       

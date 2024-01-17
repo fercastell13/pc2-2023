@@ -8,9 +8,7 @@
 
 # Construir las imágenes
 docker build -t 21/productpage -f ./ProductPage/Dockerfile .
-# docker build -t 21/details -f ./Details/Dockerfile .
-# docker build -t g40/details .
-# docker build -t details -f ./DockerCompose/Details/Dockerfile .
+docker build -t 21/details -f ./Details/Dockerfile .
 
 # docker build -t 21/reviews -f ./Reviews/Dockerfile .
 # docker build -t 21/ratings -f ./Ratings/Dockerfile .

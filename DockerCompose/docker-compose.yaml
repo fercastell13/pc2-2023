@@ -4,23 +4,25 @@ services:
     build: 
       context: ./ProductPage
       dockerfile: Dockerfile
-    # ...
     image: 21/productpage
     #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-productpage
-    # ...
     ports:
       - "9080:9080"
     environment:
       - SERVICE_VERSION=v1
-
-  # details:
-  #   build: ./path_to_details
-  #   ports:
-  #     - "9080:9080"
-  #   environment:
-  #     - SERVICE_VERSION=v1
-  #     - ENABLE_EXTERNAL_BOOK_SERVICE=true
+  details:
+    build:
+      context: ./Details
+      dockerfile: Dockerfile
+    image: 21/details
+    #<numero_de_grupo>/<nombre_de_microservicio>
+    container_name: 21-details
+    ports:
+      - "9081:9080"
+    # environment:
+    #   - SERVICE_VERSION=v1
+    #   - ENABLE_EXTERNAL_BOOK_SERVICE=true
 
   # reviews:
   #   build: ./path_to_reviews

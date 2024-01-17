@@ -1,6 +1,6 @@
 # Imagen disponible en DockerHub:
 # https://hub.docker.com/repository/docker/fernandocastell/product-page/
-# 
+# docker run -p 9080:9080 fernandocastell/product-page:1.0
 
 # Usar la imagen base de Python
 

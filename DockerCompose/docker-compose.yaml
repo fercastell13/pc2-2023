@@ -2,10 +2,9 @@ version: '3'
 services:
   productpage:
     build: 
-      context: ./ProductPage
+      context: ./ProductPage/
       dockerfile: Dockerfile
-    image: 21/productpage
-    #<numero_de_grupo>/<nombre_de_microservicio>
+    image: 21/productpage #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-productpage
     ports:
       - "9080:9080"
@@ -13,10 +12,9 @@ services:
       - SERVICE_VERSION=v1
   details:
     build:
-      context: ./Details
+      context: ./Details/
       dockerfile: Dockerfile
-    image: 21/details
-    #<numero_de_grupo>/<nombre_de_microservicio>
+    image: 21/details #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-details
     ports:
       - "9081:9080"
@@ -25,14 +23,14 @@ services:
     #   - ENABLE_EXTERNAL_BOOK_SERVICE=true
 
   # reviews:
-  #   build: ./path_to_reviews
+  #   build: ./Reviews
   #   ports:
   #     - "9080:9080"
   #   environment:
   #     - SERVICE_VERSION=v1
 
   # ratings:
-  #   build: ./path_to_ratings
+  #   build: ./Ratings
   #   ports:
   #     - "9080:9080"
   #   environment:

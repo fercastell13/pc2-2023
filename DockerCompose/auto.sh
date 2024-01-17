@@ -7,7 +7,7 @@
 # icacls auto.sh /grant "usrname:RX"
 
 # Construir las imágenes
-docker build -t product-page -f ./ProductPage/Dockerfile .
+docker build -t productpage -f ./ProductPage/Dockerfile .
 # docker build -t details -f ./Ratings/Dockerfile .
 # docker build -t details -f ./Reviews/Dockerfile .
 # docker build -t details -f ./Ratings/Dockerfile .

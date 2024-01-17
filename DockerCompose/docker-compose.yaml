@@ -6,9 +6,8 @@ services:
       dockerfile: Dockerfile
     # ...
     image: 21/productpage
+    #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-productpage
-    volumes:
-      - ./productpage:/app
     # ...
     ports:
       - "9080:9080"

@@ -21,6 +21,6 @@ CMD ["python3", "/practica_creativa2/bookinfo/src/productpage/productpage.py", "
 
 # Si queremos construir la imagen usaremos
 # el siguiente comando:
-#       $ docker build -t product-page -f ./DockerCompose/ProductPage/Dockerfile .
+#       $ docker build -t productpage -f ./DockerCompose/ProductPage/Dockerfile .
 #       $ docker-compose up
-#       $ http://localhost:9080/product-page
+#       $ http://localhost:9080/productpage

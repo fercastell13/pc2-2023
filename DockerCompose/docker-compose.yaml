@@ -8,8 +8,8 @@ services:
     container_name: 21-productpage
     ports:
       - "9080:9080"
-    environment:
-      - SERVICE_VERSION=v1
+    # environment:
+    #   - SERVICE_VERSION=v1
   details:
     build:
       context: ./Details/

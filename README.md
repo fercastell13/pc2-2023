@@ -5,7 +5,7 @@ Autores:<br/>
 *Fernando Castell Miñón y Belén Casajús Casado*
 
 ## Descripción
-En esta práctica se va a desplegar una aplicación utilizando diferentes tecnologías.<br/>
+En esta práctica se va a desplegar una aplicación (https://github.com/CDPS-ETSIT/practica_creativa2) utilizando diferentes tecnologías.<br/>
 Este documento, a la par que de memoria, sirve como guía para el correcto despliegue de la aplicación, con instrucciones detalladas sobre el uso de cada tecnología.
 
 ## Despliegue de una aplicación escalable

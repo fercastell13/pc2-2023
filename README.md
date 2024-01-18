@@ -50,7 +50,6 @@ http://<ip-publica>:<puerto>/productpage
 
 ### 2.- Despliegue de una aplicación monolítica usando docker (2 puntos)
 
-
 Se crea un archivo Dockerfile, abriendo el puerto 9080, haciendo el clonado de la aplicación, se instalan las dependencias necesarias con el fichero *requirements.txt*.<br/>
 Se crea la variable de entorno y se sustituye en el HTML.
 Por último, se lanza la aplicación en el puerto 9080 con el siguiente comando:
@@ -59,19 +58,27 @@ CMD ["python3", "./practica_creativa2/bookinfo/src/productpage/productpage_monol
 
 ~~~
 
-
-Para la ejecución, será suficiente con 3 sencillos pasos
-
-1.- Crear la imagen con la siguiente orden:
+Necesitamos iniciar el servicio de Docker. A través de la terminal sería:
 ~~~
-docker build -t 21/product-page .
+sudo service docker start
 ~~~
-2.- Arrancar el contenedor ene l puerto 9080
+En Windows:
 ~~~
-docker run --name 21-product-page -p 9080:9080 -d 21/product-page
+Start-Service Docker
 ~~~
 
-3.- Abrir el navegador:
+El proceso, por si no era lo suficientemente simple, se ha automatizado con el fichero *auto-docker.sh*, por lo que será suficiente un único paso:
+
+Ejecutar auto-docker.sh:
+~~~
+./auto-docker.sh
+~~~
+Alternativamente, en windows:
+~~~
+.\auto-docker.sh
+~~~
+
+Ahora solo será necesario abrir el navegador:
 ~~~
 http://localhost:9080/product-page
 ~~~

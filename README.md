@@ -50,6 +50,9 @@ http://<ip-publica>:<puerto>/productpage
 
 ### 2.- Despliegue de una aplicación monolítica usando docker (2 puntos)
 
+La imagen creada con Dockerfile se encuentra disponible en DockerHub a través del siguiente enlace:<br/>
+https://hub.docker.com/repository/docker/fernandocastell/product-page
+
 Se crea un archivo Dockerfile, abriendo el puerto 9080, haciendo el clonado de la aplicación, se instalan las dependencias necesarias con el fichero *requirements.txt*.<br/>
 Se crea la variable de entorno y se sustituye en el HTML.
 Por último, se lanza la aplicación en el puerto 9080 con el siguiente comando:

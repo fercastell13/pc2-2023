@@ -93,6 +93,12 @@ El resultado por pantalla será algo parecido a lo siguiente:<br>
 ### 3.- Segmentación de una aplicación monolítica en microservicios utilizando docker-compose ( 2 puntos)
 //TODO
 
+DESPLIEGUE: UNA VEZ CREADAS LAS IMÁGENES SIMPLEMENTE FALTARÍA HACER:
+~~~
+docker-compose up
+~~~
+
+
 ### 4.- Despliegue de una aplicación basada en microservicios utilizando Kubernetes (4 puntos)
 //TODO
 

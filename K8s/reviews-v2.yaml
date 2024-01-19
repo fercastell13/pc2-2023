@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: productpage-container
-        image: fernandocastell/productpage:1.0
+        image: fernandocastell/reviews:v2
         ports:
         - container

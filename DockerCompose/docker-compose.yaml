@@ -48,6 +48,7 @@ services:
 
   ratings:
     build: ./Ratings
+    image: 21/ratings
     ports:
       - "9083:9080"
     environment:

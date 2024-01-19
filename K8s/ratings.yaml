@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
+type: LoadBalancer
 metadata:
-  name: details-deployment
+  name: ratings-deployment
 spec:
-  replicas: 3 # enunciado
+  replicas: 2 # enunciado
   selector:
     matchLabels:
-      app: details
+      app: ratings
   template:
     metadata:
       labels:
-        app: details
+        app: ratings
     spec:
       containers:
-      - name: details-container
-        image: fernandocastell/details:1.0
+      - name: ratings-container
+        image: fernandocastell/ratings:1.0
         ports:
         - containerPort: 9080

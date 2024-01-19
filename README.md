@@ -98,11 +98,22 @@ DESPLIEGUE: UNA VEZ CREADAS LAS IMÁGENES SIMPLEMENTE FALTARÍA HACER:
 docker-compose up
 ~~~
 
+//TODO
+**Incluya en la memoria de la práctica las diferencias con la versión de un único contenedor.**
+
+
+
 
 ### 4.- Despliegue de una aplicación basada en microservicios utilizando Kubernetes (4 puntos)
 //TODO
+gcloud container clusters create pc2-cluster --num-nodes=5 --no-enable-autoscaling
 
 
-Hemos añadido un FW para habilitar el tráfico en el puerto 9080. Ahora sale la app correctamente, aunque sin estilo.
-La aplicación se encuentra corriendo en http://34.140.34.89:9080/ (no funciona en HTTPS)
+~~~
+minikube start
+~~~
 
+Puedes verificar el estado del clúster con el siguiente comando:
+~~~
+minikube status
+~~~

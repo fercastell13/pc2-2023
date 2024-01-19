@@ -23,7 +23,7 @@ metadata:
     app: ratings
     version: v1
 spec:
-  replicas: 1
+  replicas: 2 # venia un 1 en la plantilla
   selector:
     matchLabels:
       app: ratings

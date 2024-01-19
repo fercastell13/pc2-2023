@@ -109,6 +109,11 @@ docker-compose up
 gcloud container clusters create pc2-cluster --num-nodes=5 --no-enable-autoscaling
 
 
+//TODO - TEORÍA
+**Incluya en la memoria de la práctica las diferencias que encuentra al crear los pods, así mismo la diferencia que ve para escalar esta última solución.**
+
+
+
 ~~~
 minikube start
 ~~~
@@ -117,3 +122,11 @@ Puedes verificar el estado del clúster con el siguiente comando:
 ~~~
 minikube status
 ~~~
+
+## ENTREGA
+//TODO
+*Los alumnos deberán entregar un fichero comprimido (zip) en el que se incluyan los scripts y ficheros de configuración utilizados, así como un documento breve en el que se describan las principales decisiones de diseño e implementación tomadas, la forma de instalar y configurar los servicios, así como las partes opcionales implementadas. Adicionalmente, se incluirá también una breve discusión sobre los puntos débiles de la arquitectura en cuanto a fiabilidad y escalabilidad, mencionando alguna solución a los problemas detectados.
+
+En el examen oral de la práctica (cuyas fechas y turnos se publicarán en el moodle de la asignatura) se evaluará el correcto funcionamiento del servicio, la calidad de la solución adoptada en relación con los requisitos definidos en este documento y el conocimiento de los alumnos de las técnicas y herramientas usadas en el desarrollo de este trabajo.*
+
+

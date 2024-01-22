@@ -91,7 +91,6 @@ El resultado por pantalla será algo parecido a lo siguiente:<br>
 ![Imagen del despliegue de Docker](./images/image.png)
 
 ### 3.- Segmentación de una aplicación monolítica en microservicios utilizando docker-compose ( 2 puntos)
-//TODO
 
 En esta versión se van a añadir dos servicios, Ratings y Reviews, y se van a separar los 4 servicios para que funcionen de forma independiente.
 
@@ -112,11 +111,9 @@ Además, Docker Compose define las redes entre los contenedores y su arquitectur
 
 
 ### 4.- Despliegue de una aplicación basada en microservicios utilizando Kubernetes (4 puntos)
-//TODO
-gcloud container clusters create pc2-cluster --num-nodes=5 --no-enable-autoscaling
 
+En esta parte se ha desarrollado completamente el esqueleto de Kubernetes, pero se ha dejado para el futuro desarrollo.
 
-//TODO - TEORÍA
 **Diferencias al crear los pods, así mismo la diferencia que ve para escalar esta última solución.**
 
 En Kubernetes cada microservicio se ejecuta en su propio pod, por lo que ya no hay un único contenedor que abarca toda la aplicación.

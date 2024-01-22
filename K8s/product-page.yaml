@@ -3,4 +3,46 @@
 ##################################################################################################
 
 
-##TODO
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: details
+---
+apiVersion: apps/latest
+kind: Deployment
+metadata:
+  name: details-latest
+  labels:
+    app: details
+    version: latest
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: details
+      version: latest
+  template:
+    metadata:
+      labels:
+        app: details
+        version: latest
+    spec:
+      containers:
+      - name: 21/details
+        image: fernandocastell/details
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
+---

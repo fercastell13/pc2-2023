@@ -130,3 +130,35 @@ Puedes verificar el estado del clúster con el siguiente comando:
 ~~~
 minikube status
 ~~~
+## Conclusiones 
+### Discusión sobre los Puntos Débiles de la Arquitectura en términos de Fiabilidad y Escalabilidad
+
+#### Fiabilidad
+
+1. **Punto débil: Dependencia de un Solo Punto de Fallo**: En las primeras etapas del despliegue, la aplicación se maneja como un monolito, lo que implica que cualquier fallo en una parte del sistema puede llevar al fallo total de la aplicación. 
+
+   **Solución**: Implementar un enfoque basado en microservicios, donde cada servicio es independiente, reduce el riesgo de un fallo catastrófico. Además, el uso de patrones de diseño como circuit breakers puede ayudar a prevenir la propagación de fallos.
+
+2. **Punto débil: Gestión Ineficiente de los Recursos**: Las máquinas virtuales pesadas pueden no utilizar los recursos de manera eficiente, lo que puede llevar a problemas de rendimiento y fiabilidad cuando la carga del sistema es alta.
+
+   **Solución**: Utilizar contenedores, que son más ligeros y eficientes en cuanto a recursos. Kubernetes también permite una mejor gestión y orquestación de los contenedores, optimizando el uso de los recursos.
+
+#### Escalabilidad
+
+1. **Punto débil: Escalabilidad Limitada en Arquitecturas Monolíticas**: La escalabilidad de la aplicación en su forma monolítica es limitada, ya que escalar todo el monolito para responder a un aumento en una parte específica de la carga no es eficiente.
+
+   **Solución**: Descomponer la aplicación en microservicios permite escalar cada servicio de forma independiente según sea necesario. Esto no solo mejora la escalabilidad sino que también optimiza el uso de los recursos.
+
+2. **Punto débil: Gestión Manual del Escalado**: La gestión manual de la escalabilidad puede ser lenta y propensa a errores, lo que dificulta el manejo de picos inesperados de tráfico.
+
+   **Solución**: Implementar autoescalado en Kubernetes, lo que permite que el sistema ajuste automáticamente el número de instancias de un servicio basado en la carga actual.
+
+#### Otras Consideraciones
+
+- **Dependencia de Servicios Externos**: La aplicación puede tener dependencias de servicios externos que podrían ser puntos débiles en términos de fiabilidad y escalabilidad. Es crucial asegurar la alta disponibilidad y escalabilidad de estos servicios externos.
+  
+- **Gestión de Datos**: En una arquitectura basada en microservicios, la gestión de datos se vuelve más compleja. Es fundamental asegurar que la consistencia y disponibilidad de los datos no se vean comprometidas durante el escalado.
+
+- **Monitoreo y Logging**: Un sistema con múltiples microservicios requiere una estrategia sólida de monitoreo y logging para detectar rápidamente y responder a cualquier problema que afecte la fiabilidad o escalabilidad.
+
+En conclusión, aunque la arquitectura utilizada en esta práctica presenta ciertos desafíos en términos de fiabilidad y escalabilidad, la implementación de las soluciones propuestas puede ayudar a superar estos obstáculos y mejorar el rendimiento general del sistema.

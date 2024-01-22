@@ -6,28 +6,22 @@ services:
       dockerfile: Dockerfile
     image: 21/productpage #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-productpage
+    volumes:
+      - ./ProductPage/data:/app/data # added volumes
     ports:
       - "9080:9080"
-    # environment:
-    #   - SERVICE_VERSION=v1
+    
   details:
     build:
       context: ./Details/
       dockerfile: Dockerfile
     image: 21/details #<numero_de_grupo>/<nombre_de_microservicio>
     container_name: 21-details
+    volumes:
+      - ./Details/data:/app/data # added volumes
     ports:
       - "9081:9080"
-    # environment:
-    #   - SERVICE_VERSION=v1
-    #   - ENABLE_EXTERNAL_BOOK_SERVICE=true
 
-  # reviews:
-  #   build: ./Reviews
-  #   ports:
-  #     - "9080:9080"
-  #   environment:
-  #     - SERVICE_VERSION=v1
   # pc2-2023\DockerCompose\Reviews\reviews-wlpcfg\servers\LibertyProjectServer
   reviews:
     build:
@@ -37,6 +31,8 @@ services:
     container_name: reviews-container
     ports:
       - "9082:9080"
+    volumes:
+      - ./Reviews/data:/app/data # added volumes
     environment:
       - ENABLE_RATINGS=true # Variable de entorno
       - SERVICE_VERSION=v3 #v1, v2, v3
@@ -53,3 +49,5 @@ services:
       - "9083:9080"
     environment:
       - ENABLE_RATINGS=true
+    volumes:
+      - ./Ratings/data:/app/data # added volumes

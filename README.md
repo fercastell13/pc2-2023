@@ -92,7 +92,9 @@ El resultado por pantalla será algo parecido a lo siguiente:<br>
 
 ### 3.- Segmentación de una aplicación monolítica en microservicios utilizando docker-compose ( 2 puntos)
 
-En esta versión se van a añadir dos servicios, Ratings y Reviews, y se van a separar los 4 servicios para que funcionen de forma independiente.
+En esta versión se van a añadir dos servicios, Ratings y Reviews, y se van a separar los 4 servicios para que funcionen de forma independiente. Se han usado volúmenes para el despliegue de cada servicio. De esta manera, al rearrancar el contenedor no se perderá la información guardada en él.
+
+Se recomienda fuertemente el uso de volúmenes para ejecutar los ficheros de cada uno de los servicios
 
 Para el despliegue en Docker Compose, se define la imagen con el Dockerfile de cada microservicio (para el Reviews viene ya definido). Con los ficheros necesarios explicados en la práctica, se crean las imágenes de cada servicio y con la siguiente orden se levanta el escenario:
 ~~~
@@ -130,35 +132,21 @@ Puedes verificar el estado del clúster con el siguiente comando:
 ~~~
 minikube status
 ~~~
-## Conclusiones 
+## Conclusiones y discusiones
+
 ### Discusión sobre los Puntos Débiles de la Arquitectura en términos de Fiabilidad y Escalabilidad
 
-#### Fiabilidad
+La arquitectura monolítica tiene ventajas en cuanto a facilidad de implementación, pero la aplicación se maneja como un monolito, por lo que cualquier fallo en una parte del sistema repercute a todos los servicios y puede llevar a un fallo completo de la aplicación. 
 
-1. **Punto débil: Dependencia de un Solo Punto de Fallo**: En las primeras etapas del despliegue, la aplicación se maneja como un monolito, lo que implica que cualquier fallo en una parte del sistema puede llevar al fallo total de la aplicación. 
+En este caso, la solución más lógica es la implementación basada en microservicios, con cada microservicio independiente, previniendo un punto único de fallo.
 
-   **Solución**: Implementar un enfoque basado en microservicios, donde cada servicio es independiente, reduce el riesgo de un fallo catastrófico. Además, el uso de patrones de diseño como circuit breakers puede ayudar a prevenir la propagación de fallos.
+Por otra parte, las máquinas virtuales pesadas suelen usar los recursos de manera ineficiente, cosa que lleva a problemas de rendimiento y fiabilidad en cuanto se empieza a congestionar el sistema.
 
-2. **Punto débil: Gestión Ineficiente de los Recursos**: Las máquinas virtuales pesadas pueden no utilizar los recursos de manera eficiente, lo que puede llevar a problemas de rendimiento y fiabilidad cuando la carga del sistema es alta.
+Para mitigar esto, el uso de contenedores permite una mayor fiabilidad y optimización del uso de los recursos.
 
-   **Solución**: Utilizar contenedores, que son más ligeros y eficientes en cuanto a recursos. Kubernetes también permite una mejor gestión y orquestación de los contenedores, optimizando el uso de los recursos.
+En cuanto a la escalabilidad, en arquitecturas monolíticas la limitación es alta, pues escalar todo el monolito para responder a un aumento en una parte específica de la carga no es eficiente. Además, la gestión manual del escalado es ineficiente y propensa a errores.
 
-#### Escalabilidad
+De nuevo, la solución sería el uso de microservicios para poder responder y escalar un servicio en función de la demanda de cada uno. Por otra parte, Kubernetes propone el autoescalado, ajustando el sistema automáticamente el número de instancias necesarias de un servicio según la carga puntual.
 
-1. **Punto débil: Escalabilidad Limitada en Arquitecturas Monolíticas**: La escalabilidad de la aplicación en su forma monolítica es limitada, ya que escalar todo el monolito para responder a un aumento en una parte específica de la carga no es eficiente.
 
-   **Solución**: Descomponer la aplicación en microservicios permite escalar cada servicio de forma independiente según sea necesario. Esto no solo mejora la escalabilidad sino que también optimiza el uso de los recursos.
-
-2. **Punto débil: Gestión Manual del Escalado**: La gestión manual de la escalabilidad puede ser lenta y propensa a errores, lo que dificulta el manejo de picos inesperados de tráfico.
-
-   **Solución**: Implementar autoescalado en Kubernetes, lo que permite que el sistema ajuste automáticamente el número de instancias de un servicio basado en la carga actual.
-
-#### Otras Consideraciones
-
-- **Dependencia de Servicios Externos**: La aplicación puede tener dependencias de servicios externos que podrían ser puntos débiles en términos de fiabilidad y escalabilidad. Es crucial asegurar la alta disponibilidad y escalabilidad de estos servicios externos.
-  
-- **Gestión de Datos**: En una arquitectura basada en microservicios, la gestión de datos se vuelve más compleja. Es fundamental asegurar que la consistencia y disponibilidad de los datos no se vean comprometidas durante el escalado.
-
-- **Monitoreo y Logging**: Un sistema con múltiples microservicios requiere una estrategia sólida de monitoreo y logging para detectar rápidamente y responder a cualquier problema que afecte la fiabilidad o escalabilidad.
-
-En conclusión, aunque la arquitectura utilizada en esta práctica presenta ciertos desafíos en términos de fiabilidad y escalabilidad, la implementación de las soluciones propuestas puede ayudar a superar estos obstáculos y mejorar el rendimiento general del sistema.
+En conclusión, como se ha argumentado a lo largo de esta memoria, el uso de arquitecturas basadas en microservicios presentan muchas más opciones interesantes para la implementación de aplicaciones, aún teniendo en cuenta el aumento de complejidad, pues estas ayudan a mejorar el rendimiento, eficiencia y escalabilidad del sistema en general.

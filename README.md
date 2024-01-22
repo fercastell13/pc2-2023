@@ -93,15 +93,22 @@ El resultado por pantalla será algo parecido a lo siguiente:<br>
 ### 3.- Segmentación de una aplicación monolítica en microservicios utilizando docker-compose ( 2 puntos)
 //TODO
 
-DESPLIEGUE: UNA VEZ CREADAS LAS IMÁGENES SIMPLEMENTE FALTARÍA HACER:
+En esta versión se van a añadir dos servicios, Ratings y Reviews, y se van a separar los 4 servicios para que funcionen de forma independiente.
+
+Para el despliegue en Docker Compose, se define la imagen con el Dockerfile de cada microservicio (para el Reviews viene ya definido). Con los ficheros necesarios explicados en la práctica, se crean las imágenes de cada servicio y con la siguiente orden se levanta el escenario:
 ~~~
 docker-compose up
 ~~~
 
-//TODO
-**Incluya en la memoria de la práctica las diferencias con la versión de un único contenedor.**
+**Diferencias con la versión de un único contenedor.**
 
+El desarrollo de una aplicación en un único contenedor supone una mayor simplicidad y facilidad de despligue, pues toda la lógica de la aplicación y sus dependencias están encapsuladas en un único entorno y esto facilita la gestión e implementación inicial.
 
+Por otra parte, esto trae consigo limitaciones de escalabilidad.
+
+En cambio, Docker Compose realiza la descomposición en microservicios, con cada servicio encapsulado en un contenedor individual. Estos permite tener una mejor escalabilidad, según sea necesario aumentar cierto tipo de microservicio.
+
+Además, Docker Compose define las redes entre los contenedores y su arquitectura viene definida por el contenido del fichero *docker-compose.yaml* .
 
 
 ### 4.- Despliegue de una aplicación basada en microservicios utilizando Kubernetes (4 puntos)
@@ -110,10 +117,14 @@ gcloud container clusters create pc2-cluster --num-nodes=5 --no-enable-autoscali
 
 
 //TODO - TEORÍA
-**Incluya en la memoria de la práctica las diferencias que encuentra al crear los pods, así mismo la diferencia que ve para escalar esta última solución.**
+**Diferencias al crear los pods, así mismo la diferencia que ve para escalar esta última solución.**
+
+En Kubernetes cada microservicio se ejecuta en su propio pod, por lo que ya no hay un único contenedor que abarca toda la aplicación.
+
+Cada microservicio puede escalarse de manera independiente según la demanda de recursos que sea necesaria, usando métricas (auto-scaling, por lo que no habría que preocuparse por la demanda). Además, Kubernetes incluye balanceadores de carga integrados, por lo que el tráfico se distribuirá automáticamente entre cada microservicio.
 
 
-
+Para lanzar el escenario: 
 ~~~
 minikube start
 ~~~
@@ -122,11 +133,3 @@ Puedes verificar el estado del clúster con el siguiente comando:
 ~~~
 minikube status
 ~~~
-
-## ENTREGA
-//TODO
-*Los alumnos deberán entregar un fichero comprimido (zip) en el que se incluyan los scripts y ficheros de configuración utilizados, así como un documento breve en el que se describan las principales decisiones de diseño e implementación tomadas, la forma de instalar y configurar los servicios, así como las partes opcionales implementadas. Adicionalmente, se incluirá también una breve discusión sobre los puntos débiles de la arquitectura en cuanto a fiabilidad y escalabilidad, mencionando alguna solución a los problemas detectados.
-
-En el examen oral de la práctica (cuyas fechas y turnos se publicarán en el moodle de la asignatura) se evaluará el correcto funcionamiento del servicio, la calidad de la solución adoptada en relación con los requisitos definidos en este documento y el conocimiento de los alumnos de las técnicas y herramientas usadas en el desarrollo de este trabajo.*
-
-
